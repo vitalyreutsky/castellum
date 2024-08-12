@@ -1,0 +1,42 @@
+.tooltip-wrapper {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 24px;
+  white-space: nowrap;
+
+  color: $dark-text;
+  background: #ffffff;
+  padding: 3px 10px;
+  border-radius: 3px;
+  border: 1px solid $dark-text;
+  background: $white;
+
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@include for-desktop {
+  .tooltip-wrapper:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}

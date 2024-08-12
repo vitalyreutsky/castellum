@@ -1,0 +1,358 @@
+.hero__rewards {
+  position: relative;
+
+  @include tablet {
+    margin: 0 -16px;
+  }
+
+  .hero__lines {
+    left: -100px;
+    opacity: 0.2;
+  }
+
+  &-container {
+    position: relative;
+    border-radius: 20px;
+    background: linear-gradient(270deg, #ad5cec 0%, #ec4ab5 100%);
+    overflow: hidden;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 33%;
+      width: 409.17px;
+      height: 447.381px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='411' height='449' viewBox='0 0 411 449' fill='none'%3E%3Cpath opacity='0.2' d='M62.6402 1C56.7417 5.66961 50.2629 9.55948 44.3419 14.2078C28.7329 26.4616 17.8964 46.8473 10.5886 64.8835C3.75005 81.7617 0.880602 100.905 1.00379 119.045C1.17561 144.344 5.58835 166.67 24.8512 184.166C40.8673 198.713 60.7084 213.064 82.4977 216.773C98.9845 219.579 116.193 219.346 132.807 218.011C143.756 217.132 154.894 215.433 165.092 211.178C176.511 206.414 187.907 198.451 191.279 185.955C194.626 173.549 196.005 157.018 188.298 145.873C182.353 137.278 171.797 129.618 161.607 127.024C152.228 124.637 141.775 124.766 132.21 124.594C121.415 124.399 110.187 124.177 99.5119 126.199C86.7545 128.615 72.988 135.113 64.5204 145.185C58.9918 151.761 56.1439 160.635 53.6515 168.666C49.1728 183.097 45.7483 197.962 43.3329 212.875C39.6535 235.591 40.2799 259.043 41.5444 281.941C43.3722 315.04 52.0826 346.394 68.1434 375.588C87.6771 411.094 126.522 428.499 164.45 438.049C204.642 448.17 246.482 449.717 287.677 447.497C302.93 446.675 318.176 445.367 333.308 443.278C410.937 432.559 338.432 439.698 410.17 426.126' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E");
+    }
+
+    @include tablet {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  &-inner {
+    position: relative;
+    display: flex;
+    padding-top: 20px;
+    padding-right: 20px;
+    z-index: 1;
+
+    @include tablet {
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      gap: 30px;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 602px;
+    width: 100%;
+
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+
+  &-info-inner {
+    max-width: 600px;
+    padding: 70px 50px 90px;
+
+    @include tablet {
+      max-width: 100%;
+      padding: 40px 12px 0;
+    }
+  }
+
+  &-title {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    @include tablet {
+      font-size: 32px;
+    }
+  }
+
+  &-items {
+    width: 100%;
+    margin-bottom: 90px;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &-item {
+    &.swiper-slide:not(.swiper-slide-active) {
+      opacity: 0 !important;
+    }
+  }
+
+  &-item-text {
+    font-size: 34px;
+
+    @include tablet {
+      font-size: 24px;
+    }
+  }
+
+  &-btn {
+    position: relative;
+    padding: 20px;
+    font-size: 24px;
+    width: 100%;
+    background: none;
+    border-radius: 10px;
+    z-index: 1;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.2s ease-in-out;
+      z-index: -1;
+    }
+
+    &::after {
+      background: linear-gradient(90deg, #5fa9ff 0%, #ff4af8 100%);
+    }
+
+    &::before {
+      background: linear-gradient(90deg, #7180ff 0%, #ff6af0 100%);
+      opacity: 0;
+    }
+
+    @include for-desktop {
+      &:hover {
+        &::after {
+          opacity: 0;
+        }
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    @include tablet {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border: none;
+    }
+  }
+
+  // progress
+  .progress {
+    height: 5px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .progress__bar {
+    position: relative;
+    width: auto;
+    height: 100%;
+  }
+
+  .progress__bar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: $purple;
+  }
+
+  .progress.animate .progress__bar:after {
+    transition: width linear;
+    width: 100%;
+    transition-duration: 2s;
+  }
+
+  &-image {
+    max-width: 336px;
+    margin-bottom: -160px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  // reviews
+  &-reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+    margin-left: auto;
+    padding-bottom: 20px;
+
+    @include tablet {
+      display: none;
+    }
+
+    .hero__reviews {
+      &-items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      &-item {
+        display: flex;
+        align-items: flex-end;
+        gap: 14px;
+
+        &:nth-child(odd) {
+          margin-right: 120px;
+
+          .hero__reviews-item-logo {
+            &::after {
+              right: 0;
+            }
+          }
+
+          .hero__reviews-item-body {
+            background: #f89bef;
+            border-radius: 10px 10px 10px 0px;
+            &::before {
+              left: -10px;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='17' viewBox='0 0 11 17' fill='none'%3E%3Cpath d='M11 0V17H0C5.30228 14.506 9.1019 9.63843 10.2341 3.88933L11 0Z' fill='%23F89BEF'/%3E%3C/svg%3E");
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+          .hero__reviews-item-logo {
+            &::after {
+              left: 0;
+              width: 16px;
+              height: 16px;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Crect width='16' height='16' rx='8' fill='%234A1363'/%3E%3Cpath d='M11.3904 1.48255L10.8863 1.72452C8.79731 2.72725 6.39518 2.85756 4.21 2.08667L4.28966 2.19359C4.72232 2.77429 5.30195 3.22917 5.96886 3.51137C5.53673 4.09522 4.99637 4.59053 4.3772 4.97032L3.96301 5.22438L5.60597 4.94842C7.90177 4.56279 9.96751 3.32505 11.3904 1.48255Z' fill='%2348DE69'/%3E%3Cpath d='M8.21277 13.5C7.31915 13.5 6.6844 13.2614 6.30851 12.7843C5.93617 12.3071 5.75 11.6062 5.75 10.6815V8.11815C5.75 7.42276 5.82092 6.84389 5.96277 6.38153C6.10461 5.91917 6.35284 5.57332 6.70745 5.34399C7.06206 5.11466 7.55496 5 8.18617 5C8.62589 5 9.0195 5.08138 9.36702 5.24413C9.71809 5.40688 9.99468 5.64545 10.1968 5.95986C10.3989 6.27426 10.5 6.65894 10.5 7.1139V8.38446H8.55851V7.21932C8.55851 7.02698 8.53191 6.86608 8.47872 6.73662C8.42553 6.60346 8.31028 6.53688 8.13298 6.53688C7.82092 6.53688 7.66489 6.76806 7.66489 7.23042V11.264C7.66489 11.4342 7.70035 11.5914 7.77128 11.7356C7.8422 11.8762 7.95922 11.9465 8.12234 11.9465C8.28901 11.9465 8.40426 11.878 8.46809 11.7412C8.53546 11.6006 8.56915 11.4379 8.56915 11.2529V9.85476H10.5V11.3084C10.5 11.7671 10.4007 12.161 10.2021 12.4902C10.0071 12.8157 9.73759 13.0654 9.39362 13.2392C9.04965 13.4131 8.65603 13.5 8.21277 13.5Z' fill='white'/%3E%3C/svg%3E");
+            }
+          }
+
+          .hero__reviews-item-body {
+            background: #c97fff;
+            border-radius: 10px 10px 0px 10px;
+            &::before {
+              right: -10px;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='17' viewBox='0 0 11 17' fill='none'%3E%3Cpath d='M0 0V17H11C5.69772 14.506 1.8981 9.63843 0.765929 3.88933L0 0Z' fill='%23C97FFF'/%3E%3C/svg%3E");
+            }
+          }
+        }
+      }
+
+      &-item-logo {
+        position: relative;
+        width: 51px;
+        height: 51px;
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+          border-radius: 50%;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          width: 12px;
+          height: 12px;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Ccircle cx='6' cy='6' r='5.5' fill='%2312CE69' stroke='white'/%3E%3C/svg%3E");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          z-index: 1;
+        }
+      }
+
+      &-item-body {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        max-width: 308px;
+        width: 100%;
+        padding: 10px;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          width: 11px;
+          height: 17px;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+
+      &-item-text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        font-size: 16px;
+        color: $white;
+
+        span {
+          font-size: 14px;
+        }
+      }
+
+      &-item-bottom {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          opacity: 0.7;
+
+          &:last-child {
+            &::after {
+              content: "";
+              display: block;
+              width: 13px;
+              height: 8px;
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='9' viewBox='0 0 13 9' fill='none'%3E%3Cpath d='M1 4.5L3.5 7L9 1.5' stroke='white' stroke-linecap='round'/%3E%3Cpath d='M6.5 7L12 1.5' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E");
+            }
+          }
+        }
+      }
+    }
+  }
+}

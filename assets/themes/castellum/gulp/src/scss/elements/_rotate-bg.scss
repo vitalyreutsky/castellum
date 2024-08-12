@@ -1,0 +1,60 @@
+.rotate__bg {
+  position: absolute;
+  top: -220px;
+  left: -50px;
+  width: 1057px;
+  height: 1057px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.05;
+
+  @include tablet {
+    left: auto;
+    right: 0;
+    top: -150px;
+    width: 789px;
+    height: 789px;
+  }
+
+  &-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    * {
+      width: 100%;
+      height: auto;
+    }
+
+    &--big {
+      width: 100%;
+      height: 100%;
+      animation: 25s linear infinite rotate-big-image;
+    }
+
+    &--middle {
+      width: 699px;
+      height: 699px;
+      animation: 25s linear infinite rotate-middle-image;
+
+      @include tablet {
+        width: 522px;
+        height: 522px;
+      }
+    }
+
+    &--small {
+      width: 346px;
+      height: 346px;
+      animation: 40s linear infinite rotate-small-image;
+
+      @include tablet {
+        width: 258px;
+        height: 258px;
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+.contacts {
+  padding: 100px 0;
+  background: #161132;
+  overflow: hidden;
+
+  @include tablet {
+    padding: 30px 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  &__form {
+    max-width: 890px;
+
+    .form__item {
+      max-width: 100%;
+    }
+  }
+
+  // about
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    max-width: 440px;
+
+    .scroller {
+      gap: 32px;
+      overflow: hidden;
+
+      &__item {
+        cursor: auto;
+      }
+
+      .tooltip {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      max-width: 100%;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+
+  &__about-title {
+    position: relative;
+    color: $white !important;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 10px;
+
+      width: 396px;
+      height: 395px;
+
+      border-radius: 396px;
+      background: var(--Text, #13224b);
+      filter: blur(115.55000305175781px);
+      z-index: -1;
+    }
+
+    @include tablet {
+      font-size: 28px;
+      text-align: center;
+    }
+  }
+
+  &__about-title {
+    width: fit-content;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 279px;
+      height: 84px;
+
+      opacity: 0.4;
+      background: #0a00be;
+
+      filter: blur(62.5px);
+    }
+  }
+
+  &__about-text {
+    font-size: 24px;
+    line-height: 36px;
+
+    span {
+      color: $purple;
+    }
+
+    @include tablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .form__items {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  &__form-title {
+    @include tablet {
+      text-align: left;
+      font-size: 20px;
+    }
+  }
+}

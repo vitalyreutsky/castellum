@@ -1,0 +1,145 @@
+.offers {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    @include tablet {
+      display: flex;
+      gap: 16px;
+      padding: 0 16px;
+      margin: 0 -16px;
+      overflow-y: auto;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -150px;
+      left: -100px;
+      width: 348px;
+      height: 292px;
+      border-radius: 50%;
+      background-color: $light-green;
+      filter: blur(150px);
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
+    }
+
+    &:first-child {
+      .offers__item-label {
+        right: 0;
+
+        @include tablet {
+          right: -30px;
+        }
+      }
+    }
+
+    @include for-desktop {
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+
+        .offers__item-label {
+          font-size: 260px;
+        }
+
+        .offers__item-text {
+          transform: translateY(-20px);
+        }
+
+        .offers__item-btn {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+
+    @include tablet {
+      max-width: 300px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__item-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 50px 30px;
+    height: 100%;
+
+    @include tablet {
+      padding: 23px 30px;
+    }
+  }
+
+  &__item-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1 1 auto;
+    transition: all 0.4s ease-in-out;
+    z-index: 1;
+
+    h4 {
+      line-height: 32px;
+      @include tablet {
+        font-size: 24px;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 150%;
+
+      @include tablet {
+        font-size: 16px;
+        color: $gray;
+      }
+    }
+  }
+
+  &__item-label {
+    position: absolute;
+    top: 0;
+    right: -30px;
+
+    font-size: 300px;
+    font-weight: 900;
+    line-height: 280px;
+    transition: all 0.4s ease-in-out;
+    opacity: 0.04;
+
+    @include tablet {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__item-btn {
+    position: relative;
+    opacity: 0;
+    transform: translateY(300%);
+    transition: all 0.4s ease-in-out !important;
+    z-index: 1;
+  }
+}

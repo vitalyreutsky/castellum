@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<svg id="Vector4" width="2202" height="780" viewBox="0 0 2202 780" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; max-height: 100%;">
+<path d="M1 1L17.0849 208.986C23.3113 139.657 139.626 32.1252 255.245 33.1576C447.534 34.8746 165.481 315.312 255.245 525.372C370.87 795.95 790.957 630.98 1002.42 426.307C1280.53 157.119 1606.38 80.356 1948.31 289.898C2054.58 355.021 2186.64 487.682 2184.4 504.626L2201 779" stroke="url(#paint0_linear_31_662)" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0,0,3586.89892578125"><animate attributeType="XML" attributeName="stroke-dasharray" repeatCount="1" dur="2.5s" values="0,0,0,3586.89892578125;
+          0,1793.449462890625,1793.449462890625,0;
+          3586.89892578125,0,0,0" keyTimes="0; 0.5; 1" fill="freeze"></animate></path>
+<defs>
+<linearGradient id="paint0_linear_31_662" x1="2201" y1="390" x2="1" y2="390" gradientUnits="userSpaceOnUse">
+<stop offset="0.0462408" stop-color="#344476" stop-opacity="0"></stop>
+<stop offset="0.0963316" stop-color="#344476"></stop>
+<stop offset="0.902928" stop-color="#344476"></stop>
+<stop offset="0.95461" stop-color="#344476" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>

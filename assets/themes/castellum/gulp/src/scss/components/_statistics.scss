@@ -1,0 +1,104 @@
+.statistics {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+
+    @include tablet {
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    span {
+      color: $purple !important;
+    }
+  }
+
+  &__items {
+    display: flex;
+    gap: 160px;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 35px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      opacity: 0.4;
+      background: $light-green;
+
+      filter: blur(62.5px);
+      z-index: -1;
+    }
+
+    @include tablet {
+      justify-content: center;
+      align-items: center;
+
+      &::after {
+        width: 172px;
+        height: 50px;
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+        filter: blur(40px);
+      }
+    }
+  }
+
+  &__item-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 80px;
+    line-height: 150%;
+    font-weight: 600;
+    color: $gray;
+
+    p {
+      color: $light-green;
+      font: inherit;
+    }
+
+    @include tablet {
+      font-size: 40px;
+      gap: 0;
+    }
+  }
+
+  &__item-text {
+    font-size: 24px;
+    line-height: 32px;
+
+    @include tablet {
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+
+  &__btn {
+    min-width: 466px;
+    width: fit-content;
+    font-size: 28px;
+    padding: 20px;
+
+    @include tablet {
+      min-width: auto;
+      width: 100%;
+      font-size: 20px;
+    }
+  }
+}

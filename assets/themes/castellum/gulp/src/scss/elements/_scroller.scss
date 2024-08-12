@@ -1,0 +1,58 @@
+.scroller {
+  position: relative;
+  display: flex;
+  gap: 80px;
+  justify-content: space-between;
+  min-width: 100%;
+
+  width: 100%;
+  z-index: 1;
+
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+
+  &.paused {
+    .scroller__inner {
+      animation-play-state: paused !important;
+    }
+  }
+
+  .tooltip {
+    font-size: 20px;
+  }
+}
+
+.scroller__inner {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+
+  animation: scroll 20s linear infinite;
+
+  @include tablet {
+    gap: 20px;
+  }
+}
+
+.scroller__item {
+  width: 30px;
+  height: 30px;
+
+  img {
+    width: 100%;
+  }
+
+  @include tablet {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - 32px));
+  }
+}

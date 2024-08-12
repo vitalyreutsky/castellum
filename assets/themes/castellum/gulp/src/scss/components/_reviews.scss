@@ -1,0 +1,33 @@
+.reviews {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: -100px;
+    width: 2357px;
+    height: 470px;
+
+    background-image: var(--bg-logo);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include tablet {
+      gap: 20px;
+    }
+  }
+}

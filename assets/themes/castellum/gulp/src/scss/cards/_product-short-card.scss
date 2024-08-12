@@ -1,0 +1,140 @@
+.product-card {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid $dark-text;
+  background: $white;
+  cursor: pointer;
+  overflow: hidden;
+
+  @include for-desktop {
+    &:hover {
+      .product-card__logo {
+        img {
+          transform: scale(1.1);
+        }
+      }
+
+      .product-card__btn {
+        background-color: #e700ec;
+      }
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__top {
+    height: 280px;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    @include tablet {
+      height: 175px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    height: 100%;
+
+    @include tablet {
+      padding: 16px;
+    }
+  }
+
+  &__id,
+  &__title,
+  &__rate,
+  &__geo {
+    color: $dark-text;
+
+    span {
+      color: inherit;
+    }
+  }
+
+  &__id {
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+
+    @include tablet {
+      font-size: 12px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $bg-light;
+
+    @include tablet {
+      font-size: 18px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1 1 auto;
+    margin-bottom: 20px;
+  }
+
+  &__tab {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+
+    span {
+      min-width: 70px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    @include tablet {
+      font-size: 14px;
+
+      span {
+        min-width: 50px;
+      }
+    }
+  }
+
+  &__btn {
+    font-size: 24px;
+    padding: 22px;
+
+    @include tablet {
+      font-size: 18px;
+      padding: 15px;
+    }
+  }
+}

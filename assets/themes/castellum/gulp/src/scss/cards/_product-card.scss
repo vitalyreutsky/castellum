@@ -1,0 +1,162 @@
+.product-card {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid $dark-text;
+  background: $white;
+  cursor: pointer;
+  overflow: hidden;
+
+  @include for-desktop {
+    &:hover {
+      .product-card__logo {
+        img {
+          transform: scale(1.1);
+        }
+      }
+
+      .product-card__btn {
+        background-color: #e700ec;
+      }
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__top {
+    height: 280px;
+    flex-shrink: 0;
+
+    @include tablet {
+      height: 175px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &__hide-text {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 22px;
+      height: 22px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.0005 3.57505C10.2468 3.57505 9.52401 3.87444 8.99109 4.40735C8.45818 4.94027 8.15879 5.66306 8.15879 6.41672V9.25838H13.8421V6.41672C13.8421 5.66306 13.5427 4.94027 13.0098 4.40735C12.4769 3.87444 11.7541 3.57505 11.0005 3.57505ZM15.4921 9.25838V6.41672C15.4921 5.22545 15.0189 4.08298 14.1765 3.24063C13.3342 2.39828 12.1917 1.92505 11.0005 1.92505C9.80919 1.92505 8.66672 2.39828 7.82437 3.24063C6.98202 4.08298 6.50879 5.22545 6.50879 6.41672V9.25838H6.41712C5.71209 9.25838 5.03593 9.53846 4.5374 10.037C4.03886 10.5355 3.75879 11.2117 3.75879 11.9167V17.4167C3.75879 18.1217 4.03886 18.7979 4.5374 19.2964C5.03593 19.795 5.71209 20.075 6.41712 20.075H15.5838C16.2888 20.075 16.965 19.795 17.4635 19.2964C17.962 18.7979 18.2421 18.1217 18.2421 17.4167V11.9167C18.2421 11.2117 17.962 10.5355 17.4635 10.037C16.965 9.53846 16.2888 9.25838 15.5838 9.25838H15.4921ZM14.6681 10.9084L14.6671 10.9084L14.6662 10.9084H7.33473L7.33379 10.9084L7.33285 10.9084H6.41712C6.1497 10.9084 5.89322 11.0146 5.70412 11.2037C5.51502 11.3928 5.40879 11.6493 5.40879 11.9167V17.4167C5.40879 17.6841 5.51502 17.9406 5.70412 18.1297C5.89322 18.3188 6.1497 18.425 6.41712 18.425H15.5838C15.8512 18.425 16.1077 18.3188 16.2968 18.1297C16.4859 17.9406 16.5921 17.6841 16.5921 17.4167V11.9167C16.5921 11.6493 16.4859 11.3928 16.2968 11.2037C16.1077 11.0146 15.8512 10.9084 15.5838 10.9084H14.6681ZM9.76891 13.4352C10.0955 13.1085 10.5385 12.925 11.0005 12.925C11.4624 12.925 11.9054 13.1085 12.232 13.4352C12.5586 13.7618 12.7421 14.2048 12.7421 14.6667C12.7421 15.1286 12.5586 15.5716 12.232 15.8983C11.9054 16.2249 11.4624 16.4084 11.0005 16.4084C10.5385 16.4084 10.0955 16.2249 9.76891 15.8983C9.44229 15.5716 9.25879 15.1286 9.25879 14.6667C9.25879 14.2048 9.44229 13.7618 9.76891 13.4352Z' fill='white' fill-opacity='0.7'/%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px 30px;
+    height: 100%;
+
+    @include tablet {
+      padding: 16px;
+    }
+  }
+
+  &__method,
+  &__title,
+  &__rate,
+  &__desc{
+    color: $dark-text;
+
+    span {
+      color: inherit;
+    }
+  }
+
+  &__method {
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+
+    @include tablet {
+      font-size: 12px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $bg-light;
+
+    @include tablet {
+      font-size: 18px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1 1 auto;
+    margin-bottom: 20px;
+
+    @include tablet {
+      gap: 10px;
+    }
+  }
+
+  &__rate,
+  &__desc {
+    color: $dark-text;
+  }
+
+  &__desc {
+    font-size: 16px;
+  }
+
+  &__btn {
+    font-size: 24px;
+    padding: 22px;
+
+    @include tablet {
+      font-size: 18px;
+      padding: 15px;
+    }
+  }
+}

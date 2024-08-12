@@ -1,0 +1,91 @@
+.sign-in {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 208px;
+  overflow: hidden;
+
+  @include tablet {
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+
+  .rotate__bg {
+    top: 30px;
+    left: -300px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__form {
+    max-width: 550px;
+    margin: 0 auto;
+
+    .form {
+      &.hide {
+        display: none;
+      }
+
+      &__inner {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__btn-reset-pass {
+        font-size: 18px;
+        width: fit-content;
+        margin: 10px auto 0;
+        text-align: center;
+      }
+
+      &__btn-reset-pass,
+      &__sign-in-join a {
+        position: relative;
+        color: #6851e3;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #6851e3;
+
+          transition: all 0.2s ease-in-out;
+          opacity: 0;
+        }
+
+        @include for-desktop {
+          &:hover {
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      &__sign-in-join {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        * {
+          font-size: 18px;
+          font-weight: 400;
+        }
+      }
+
+      &__success--sign-in {
+        font-size: 32px;
+
+        * {
+          font: inherit;
+        }
+      }
+    }
+  }
+}

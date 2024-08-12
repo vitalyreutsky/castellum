@@ -1,0 +1,220 @@
+.traffic {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -15px;
+    width: 1945.733px;
+    height: 859.666px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='861' viewBox='0 0 1920 861' fill='none'%3E%3Cpath opacity='0.4' d='M150.042 2.78148C334.853 28.4852 -1.66418 311.009 85.1871 476.154C217.191 727.156 579.085 641.272 811.379 478.585C1093.23 281.195 1449.64 248.619 1732.17 471.088C1826.82 545.622 1873.9 601.708 1929.73 708.468V860.666C1857.13 572.356 1652.44 393.039 1357.08 359.002C1066.89 325.559 930.899 568.21 692.889 703.035C493.36 816.061 227.027 783.388 118.415 581.422C48.3133 451.067 359.545 121.585 174.159 91.5165C98.2802 79.2091 -16 142.363 -16 142.363V44.3481C31.6804 14.4327 92.7632 -5.18489 150.042 2.78148Z' stroke='%23344476' stroke-linecap='round'/%3E%3C/svg%3E");
+    opacity: 0.4;
+
+    @include tablet {
+      top: 22%;
+      width: 840px;
+      height: 371px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    z-index: 1;
+
+    @include tablet {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+  }
+
+  &__items {
+    position: relative;
+    min-height: 400px;
+    width: 100%;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      min-height: 300px;
+    }
+
+    @include mobile {
+      gap: 15px;
+    }
+  }
+
+  &__item {
+    position: absolute;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 1px solid $dark-text;
+    background: $white;
+
+    img {
+      width: 110px;
+      height: auto;
+    }
+
+    @include tablet {
+      position: relative;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100px;
+      height: 100px;
+      animation: none !important;
+
+      img {
+        width: 77px;
+      }
+
+      .tooltip {
+        top: auto;
+        bottom: -40px;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &:first-child {
+      top: 40px;
+      animation: itemBounceFirst 2s alternate infinite ease-in-out;
+    }
+
+    &:nth-child(2) {
+      top: auto;
+      left: 200px;
+      bottom: 0;
+      animation: itemBounceSecond 2.6s alternate infinite ease-in-out;
+    }
+
+    &:nth-child(3) {
+      top: -130px;
+      left: 250px;
+      animation: itemBounceThird 2.4s alternate infinite ease-in-out;
+    }
+
+    &:nth-child(4) {
+      left: 400px;
+      top: 40px;
+      animation: itemBounceFourth 2.3s alternate infinite ease-in-out;
+    }
+
+    &:nth-child(5) {
+      right: 100px;
+      left: auto;
+      top: -90px;
+      animation: itemBounceFifth 2s alternate infinite ease-in-out;
+    }
+
+    &:last-child {
+      left: auto;
+      right: 50px;
+      bottom: 0;
+      animation: itemBounceSixth 2.1s alternate infinite ease-in-out;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    max-width: 529px;
+
+    @include tablet {
+      max-width: 100%;
+      gap: 10px;
+    }
+  }
+
+  &__title {
+    color: $purple !important;
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    font-size: 34px;
+    color: $dark-text;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}
+
+@keyframes itemBounceFirst {
+  0% {
+    top: 40px;
+  }
+  100% {
+    top: -10px;
+  }
+}
+
+@keyframes itemBounceSecond {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -50px;
+  }
+}
+
+@keyframes itemBounceThird {
+  0% {
+    top: -130px;
+  }
+  100% {
+    top: -90px;
+  }
+}
+
+@keyframes itemBounceFourth {
+  0% {
+    top: 110px;
+  }
+  100% {
+    top: 70px;
+  }
+}
+
+@keyframes itemBounceFifth {
+  0% {
+    top: -90px;
+  }
+  100% {
+    top: -40px;
+  }
+}
+
+@keyframes itemBounceSixth {
+  0% {
+   bottom: 0;
+  }
+  100% {
+   bottom: 40px;
+  }
+}

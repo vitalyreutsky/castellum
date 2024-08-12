@@ -1,0 +1,44 @@
+.error {
+  &__page-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 104px;
+      height: 268px;
+      opacity: 0.4;
+      background: $purple;
+
+      filter: blur(62.5px);
+      z-index: -1;
+    }
+  }
+
+  &__page-image {
+    width: 479px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__page-btn {
+    width: fit-content;
+    min-width: 330px;
+    font-size: 24px;
+    padding: 18px;
+  }
+
+  &__page-text {
+    font-weight: 600;
+  }
+}

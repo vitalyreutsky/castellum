@@ -1,0 +1,94 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;
+
+  padding: 12px 24px;
+  width: fit-content;
+
+  color: $white;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.1);
+
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+
+  @include small-tablet {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &--green {
+    color: $dark-text;
+    background: $light-green;
+
+    @include for-desktop {
+      &:hover {
+        border-color: #13224b;
+        background-color: #43ff99;
+      }
+    }
+  }
+
+  &--purple {
+    width: 100%;
+    background-color: $purple;
+
+    @include for-desktop {
+      &:hover {
+        background-color: #e700ec;
+      }
+    }
+  }
+
+  &--bg {
+    font-size: 24px;
+    color: $dark-text;
+    padding: 20px;
+    border-radius: 10px;
+
+    @include tablet {
+      font-size: 20px;
+    }
+  }
+
+  &--bg-green {
+    border-color: #4cb749;
+    background: #92ff90;
+    box-shadow: 12px 12px 0px 0px #4cb749;
+
+    @include for-desktop {
+      &:hover {
+        box-shadow: 6px 6px 0 0 #4cb749;
+        transform: translate(9px, 9px);
+      }
+    }
+
+    @include tablet {
+      box-shadow: 8px 8px 0px 0px #4cb749;
+    }
+  }
+
+  &--bg-light {
+    border: 1px solid #af00ec;
+    background: $white;
+    box-shadow: 12px 12px 0px 0px #af00ec;
+
+    @include for-desktop {
+      &:hover {
+        box-shadow: 6px 6px 0 0 #af00ec;
+        transform: translate(9px, 9px);
+      }
+    }
+
+    @include tablet {
+      box-shadow: 8px 8px 0px 0px #af00ec;
+    }
+  }
+}

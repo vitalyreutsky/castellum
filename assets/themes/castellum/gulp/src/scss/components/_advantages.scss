@@ -1,0 +1,139 @@
+.advantages {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include tablet {
+    padding-bottom: 0;
+    background-position: 69%;
+    background-size: 1000px 55%;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 463px;
+
+    transform: translateY(-50px);
+  }
+
+  &__title {
+    line-height: 60px;
+
+    @include tablet {
+      line-height: normal;
+    }
+  }
+
+  &__desc {
+    color: $dark-text;
+  }
+
+  &__items {
+    display: flex;
+    position: relative;
+    max-width: 856px;
+    width: 100%;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 100%;
+    }
+  }
+
+  &__item {
+    position: absolute;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:first-child {
+      top: -80px;
+    }
+
+    &:nth-child(2) {
+      top: 150px;
+      left: 200px;
+    }
+
+    &:nth-child(3) {
+      left: 330px;
+      top: -120px;
+    }
+
+    &:last-child {
+      left: auto;
+      right: 0;
+    }
+
+    @include tablet {
+      position: relative;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+    }
+  }
+
+  &__item-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+
+    border-radius: 100px;
+    border: 1px solid #344476;
+    background: $white;
+    backdrop-filter: blur(44px);
+
+    @include tablet {
+      width: 90px;
+      height: 90px;
+
+      img {
+        width: 42px;
+      }
+    }
+  }
+
+  &__item-text {
+    font-size: 18px;
+    text-align: center;
+    min-width: 213px;
+    max-width: 230px;
+    color: $dark-text;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #344476;
+    background: $white;
+    backdrop-filter: blur(44px);
+
+    transform: translateY(-10px);
+
+    @include tablet {
+      font-size: 14px;
+
+      min-width: 180px;
+    }
+
+    @include tablet {
+      min-width: auto;
+      max-width: 140px;
+    }
+  }
+}
